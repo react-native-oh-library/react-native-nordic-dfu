@@ -1,0 +1,10 @@
+{
+  "name": "@react-native-oh-tpl/react-native-nordic-dfu",
+  "version": "3.0.0",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "types": "module",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "0.72.38"
+  }
+}

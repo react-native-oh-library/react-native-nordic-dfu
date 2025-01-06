@@ -1,7 +1,15 @@
-import { NativeModules, NativeEventEmitter, Platform } from "react-native";
-const { RNNordicDfu } = NativeModules;
-const NordicDFU = { startDFU };
+import {
+  TurboModuleRegistry,
+  NativeEventEmitter,
+  Platform
+} from "react-native";
+// import RNNordicDfu from "./src/NativeReactNativeDfu.ts";
 
+var RNNordicDfu = TurboModuleRegistry
+  ? TurboModuleRegistry.get("RNNordicDfu")
+  : NativeModules.RNDFUManager;
+
+const NordicDFU = { startDFU };
 function rejectPromise(message) {
   return new Promise((resolve, reject) => {
     reject(new Error("NordicDFU.startDFU: " + message));
